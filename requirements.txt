@@ -1,0 +1,3 @@
+# nucleul psie_kernel: zero dependente — stratul de serviciu:
+fastapi
+uvicorn[standard]
