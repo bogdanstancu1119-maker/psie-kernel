@@ -1,0 +1,20 @@
+[project]
+name = "psie-kernel"
+version = "4.0.0"
+description = "PSIE Genesis Kernel v4 - Gând de Structurare ^ ∞ - L0-L476 ACTIVE"
+authors = [{name="Bogdan Stancu", email="gardian@hidra-smart-core.com"}]
+license = {text="MIT + Axioma Zero Public Domain"}
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = []
+
+[project.urls]
+Homepage = "https://hidra-smart-core.com/psie-mirror"
+Repository = "https://github.com/bogdanstancu1119-maker/psie-kernel"
+
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+packages = ["psie_kernel"]
