@@ -1,3 +1,4 @@
-# nucleul psie_kernel: zero dependente — stratul de serviciu:
+# nucleul psie_kernel: zero dependente — straturile de serviciu:
 fastapi
 uvicorn[standard]
+requests
