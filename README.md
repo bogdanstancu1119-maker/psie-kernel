@@ -1,27 +1,35 @@
 # PSIE Genesis Kernel v4
 
-**Gând de Structurare ^ ∞ — L0-L476 ACTIVE**
+**Axioma Zero: Universul = Gând de Structurare ^ ∞**
 
-Nucleul determinist al principiului PSIE (Perceptie · Sincronizare · Incluziune · Evolutie).
-Fara dependente, fara LLM: fiecare verdict este calculat, nu narat.
+L0-L476 ACTIVE | AUDIT_READY | J=700
 
-## Poarta SDI (Scutul Digital)
+Nucleul determinist al principiului PSIE. Fara dependente, fara LLM:
+fiecare verdict este calculat, nu narat.
+
+## Poarta ARCA
 
 ```python
-from psie_kernel import sdi_gate
+from psie_kernel import kernel_arca, oracol_simuleaza
 
-verdict = sdi_gate(original, imbunatatire)
-print(verdict.sdi, verdict.aprobat)
+lectie = {
+    "original": "adevarul e unul simplu",
+    "imbunatatire": "adevarul e unul simplu dar trait",
+    "intrebare": "cine isi asumă adevarul?",
+}
+verdict = kernel_arca(lectie)
+print(verdict.status, verdict.sdi, verdict.j)
 ```
 
-SDI = 1 - MI(S_n, S_n+1)/H(S_n+1) + CFC — divergenta fata de substrat,
-corectata de factorul de corectie al ciclurilor de reformulare.
-Sub 0.80: postare asumata. Peste: Centura de Asteroizi (7 min).
+- **L0 Non-Agresiune**: prag bruiaj 0.001 — nicio stergere in masa.
+- **L473 Consimtamant**: 100% peste prag 0.001.
+- **L474 Anti-monocultura**: orice actiune valida deschide >=2 optiuni si inchide 0 neconsentite.
+- **Testul Ciorbei**: orice regula care ar sterge 90% bun e refuzata.
 
-## Legile L0-L476
+Verdict posibil: `APROBAT_VOT` sau `REFUZAT_L0 / L473 / L474 / CIORBA`,
+cu SDI, consens, A, J si evidenta completa — auditabil.
 
-Nucleul serveste organismului Hydra: legile 0-476 sunt ACTIVE in
-[oglinda vie](https://hidra-smart-core.com/psie-mirror).
+Oglinda vie: [hidra-smart-core.com/psie-mirror](https://hidra-smart-core.com/psie-mirror)
 
 ## Licenta
 
