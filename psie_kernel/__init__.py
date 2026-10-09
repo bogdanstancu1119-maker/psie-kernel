@@ -33,23 +33,22 @@ def _entropie(dist):
     return -sum(p * math.log2(p) for p in dist.values() if p > 0)
 
 
-def _ mutual_information(dist_a, dist_b):
-    cuvinte = set(dist_a) | set(dist_b)
+def _informatie_partajata(dist_a, dist_b):
+    """Informatia comuna celor doua distributii: suma min(pa,pb)·(-log2 min(pa,pb))."""
     mi = 0.0
-    for w in cuvinte:
-        pa = dist_a.get(w, 0.0)
-        pb = dist_b.get(w, 0.0)
-        if pa > 0 and pb > 0:
-            mi += pa * math.log2(pa * min(pa, pb) / (pa * pb))
+    for w in set(dist_a) & set(dist_b):
+        p = min(dist_a[w], dist_b[w])
+        if p > 0:
+            mi += p * -math.log2(p)
     return mi
 
 
 def sdi_gate(original, imbunatatire, ciclu=1):
-    """Verdict determinist: cat din îmbunatatire e ancorat în substrat."""
+    """Verdict determinist: cat din imbunatatire e ancorat in substrat."""
     a = _distributie(str(original).lower().split())
     b = _distributie(str(imbunatatire).lower().split())
     h_b = _entropie(b) or 1e-9
-    mi = _mutual_information(a, b)
+    mi = _informatie_partajata(a, b)
     cfc = min(ciclu * 0.05, CFC_MAX)
     sdi = 1.0 - (mi / h_b) + cfc
     return SDIVerdict(round(sdi, 4), cfc, ciclu, sdi < PRAG_SD)
