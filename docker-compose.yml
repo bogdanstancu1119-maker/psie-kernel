@@ -1,0 +1,24 @@
+# psie-kernel v4 — UNA SINGURĂ COMANDĂ: docker compose up
+# Demonstrează LIVE J=700: pornește nucleul determinist + Matricea Conștientă (FastAPI).
+# Oglinda web vie rulează deja pe hidra-smart-core.com/psie-mirror (același calcul: 1 - MI/H + CFC).
+#
+# Demo J=700 (după pornire):
+#   curl -X POST localhost:8000/lectie -H "Content-Type: application/json" \
+#     -d '{"original":"adevarul e unul simplu","imbunatatire":"adevarul e unul simplu dar trait","intrebare":"cine isi assume adevarul?"}'
+#   → {"verdict":"APROBAT_VOT","sdi":...,"j":700,"VAK":"Văd-Asum-Țin"}
+
+services:
+  matrice:
+    build: .
+    container_name: psie-matrice
+    ports:
+      - "8000:8000"
+    restart: unless-stopped
+    # Audit append-only: baza de lecții (matrice_retea.db) persistă între reporniri
+    volumes:
+      - matrice_db:/app/data
+    environment:
+      - J_CANONIC=700
+
+volumes:
+  matrice_db:
